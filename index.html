@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Presentation: Intro To Go</title>
+
+		<meta name="description" content="An Introduction to Golang (GO)">
+		<meta name="author" content="Samer AbuNasser">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Go Intro</h2>
+					<h4>An Introduction to Golang (Go)</h4>
+                    <a href="http://golang.org"><img src="images/fiveyears.jpg" class='centered' style="width:750px;height:420px;"></a>
+					<p>
+						<small><a href="http://github.com/snassr">Samer AbuNasser</a> / <a href="https://twitter.com/snassr_">@snassr_</a></small>
+					</p>
+				</section>
+                
+				<section>
+					<h2>Hello There!</h2>
+					<p>I work for <a href="http://www.archetypeconsulting.com">Archetype Consulting</a></p>
+                    <br>
+                    <p><i>Solutions Architect</i> by Day</p>
+                    <p><i>Computer Scientist</i> the rest of the time</p>
+                    <br>
+                    <p><b>Golang Enthusiast.</b></p>
+                </section>
+                
+                <section>
+					<h2>Why Go?</h2>
+                    <ol>
+                        <li>Easy to learn</li>
+                        <li>Built for the Web</li>
+                        <li>Community Oriented by Design</li>
+                        <li>High level & Low level Capabilites</li>
+                        <li>Small & Simple, yet Complete</li>
+                    </ol>
+                </section>
+                
+                <section>
+                    <h2>What Can Go Do?</h2>
+                    <ul>
+                        <li>Websites (yes JavaScript will still be involved)</li>
+                        <li>Mobile Applications</li>
+                        <li>Systems Programming</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h2>History of Go</h2>
+                    <ul>
+                        <li>Originated as an experiment at Google by Robert Griesemer, Rob Pike & Ken Thompson</li>
+                        <li>Goal: Development speed of Python with the performance and safety of C or C++</li>
+                        <li>Created at Google in 2007</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>Design Principles I</h2>
+                    <h3>Regular & Simple</h3>
+                    <ul>
+                        <li>Few Keywords</li>
+                        <ul>
+                                <small><li>if, range, for, else ... (21 more)</li></small>
+                        </ul>
+                        <li>Main Primitive Types</li>
+                        <ul>
+                                <small><li>boolean, numerics <small>(uint0x, int0x, float0x, complex0x)</small>, strings</li></small>
+                        </ul>
+                        <li>Main Non-Primitive Types</li>
+                        <ul>
+                                <small><li>arrays, slices, maps, structs, pointers, functions, interfaces, channels, method sets</li></small>
+                        </ul>
+                        <li>Statically Typed</li>
+                            <ul>
+                                <small>
+                                    <li>reduces runtime type errors</li>
+                                    <li>Compiler enforced variables and imports (YAGNI)</li>
+                                </small>
+                            </ul>
+                        <li>Dyanamic Features</li>
+                            <ul>
+                            <small>
+                                <li>Fast Compilation</li>
+                                <li>Garbage Collection & Cross Plaftform</li>
+                            </small>
+                            </ul>
+                    </ul>
+                </section>
+            
+                <section>
+                    <h2>Design Principles II</h2>
+                    <h3>Design Abstractly, Code Instinctively</h3>
+                    <ul>
+                        <li>Composition over Inheritance</li>
+                        <ul>
+                                <small><li>No Inheritance; Less planning, Better Extensibility</li></small>
+                        </ul>
+                        <li>Program to interfaces, not implementations</li>
+                        <ul>
+                                <small><li>Interface programming is a staple and is fundamentally simple.</li></small>
+                        </ul>
+                        <li>Polymorphism</li>
+                        <ul>
+                                <small><li>Interface Methods, Embedded Structs (Subtyping) & Identifier Promotion (Overriding)</li></small>
+
+                        </ul>
+                    </ul>
+                    <img src="images/compositionInheritance.png" align="center" style="width:430px;height:220px;">
+
+                </section>
+            
+                <section>
+                    <h2>Design Principles III</h2>
+                    <h3>Page Light, Style Consistent</h3>
+                    <small><h5>Encourages code that is easier to read and maintain</h5></small>
+                    <ul>
+                        <li>Style can be enforced by the language</li>
+                        <ul>
+                            <small><li><b>Gofmt</b> tool to format your code, <b>Godoc</b> tool to document your code</li></small>
+                        </ul>
+                        <li>Documentation generated by the language</li>
+                        <ul>
+                            <small><li><b>Godoc</b> tool to create documentation based on simple commenting rules</li></small>
+                        </ul>
+                    </ul>
+                    <img src="images/codeformat.jpg" align="center" style="width:330px;height:180px;">
+
+                </section>
+            
+                <section>
+                    <h2>Design Principles III <small>Continued</small></h2>
+                    <h3>Page Light, Style Consistent</h3>
+                    <small><h5>Dynamic & Concise Syntax</h5></small>
+                            <pre><code class="go" data-trim contenteditable>
+// This sample program demonstrates a simple web server.
+package main
+
+import (
+    "net/http"
+)
+
+func main() {
+    fs := http.FileServer(http.Dir("/home/me/mywebsite/static/"))
+    
+    http.Handle("/", fs)
+    
+    http.ListenAndServe(":3000", nil)
+}
+                            </code></pre>
+                </section>
+
+                <section data-transition="slide" data-background="#4169E1" data-background-transition="zoom">
+					<h2>Lightening Lessons in Basic Go</h2>
+                    <img src="images/speedreading.jpg" align="center" style="width:330px;height:180px;">
+				</section>
+            
+                <section>
+                    <h2>Hello World!</h2>
+                    <small><a href="https://play.golang.org/p/ZGmpjak_7O">Go to play.golang.org</a></small>
+                    <iframe src="https://play.golang.org/p/ZGmpjak_7O" frameborder="0" style="width: 1000px; height: 400px"><a href="https://play.golang.org/p/ZGmpjak_7O">see this code in play.golang.org</a></iframe>
+                </section>
+            
+                <section>
+                    <h2>Variables</h2>
+                    <small><a href="https://play.golang.org/p/j9Mfsz_o8C">Go to play.golang.org</a></small>
+                    <iframe src="https://play.golang.org/p/j9Mfsz_o8C" frameborder="0" style="width: 1000px; height: 670px"><a href="https://play.golang.org/p/j9Mfsz_o8C">see this code in play.golang.org</a></iframe>
+                </section>
+                <section>
+                    <h2>Arrays</h2>
+                    <small><a href="https://play.golang.org/p/v8b6B1s7Wj">Go to play.golang.org</a></small>
+                    <iframe src="https://play.golang.org/p/v8b6B1s7Wj" frameborder="0" style="width: 1000px; height: 670px"><a href="https://play.golang.org/p/v8b6B1s7Wj">see this code in play.golang.org</a></iframe>
+                </section>
+                <section>
+                    <h2>Slices</h2>
+                    <small><a href="https://play.golang.org/p/WPGa7jtg4M">Go to play.golang.org</a></small>
+                    <iframe src="https://play.golang.org/p/WPGa7jtg4M" frameborder="0" style="width: 1000px; height: 670px"><a href="https://play.golang.org/p/WPGa7jtg4M">see this code in play.golang.org</a></iframe>
+                </section>
+                <section>
+                    <h2>Structs</h2>
+                    <small><a href="https://play.golang.org/p/KP5cjk1Sl1">Go to play.golang.org</a></small>
+                    <iframe src="https://play.golang.org/p/KP5cjk1Sl1" frameborder="0" style="width: 1000px; height: 670px"><a href="https://play.golang.org/p/KP5cjk1Sl1">see this code in play.golang.org</a></iframe>
+                </section>
+
+                <section>
+					<h2>Out of Scope Topics</h2>
+                    <h4>(Future Talks?)</h4>
+                    <ol>
+                        <li>Pointers</li>
+                        <li>Maps</li>
+                        <li>Multi-Dimensional Structures</li>
+                        <li>Go Types In Depth</li>
+                        <li>Packaging, Project Structure & Tooling</li>
+                        <li>OOP: Composition, Interfaces, Polymorphism...</li>
+                        <li>Concurrency</li>
+                        <li>Cgo</li>
+                        <li>Gotchas</li>
+                        <li>...</li>
+                    </ol>
+                </section>
+                
+                <section>
+					<h2>Great Resources</h2>
+                    <h4>Where to go after this?</h4>
+                    <ol>
+                        <li><a href="https://golang.org/">Official Golang Website</a></li>
+                        <li>Blogs & Community</li>
+                            <small><ul>
+                                <li><a href="http://spf13.com/post/">A blog with some great posts by Steve Francia</a></li>
+                                <li><a href="https://github.com/avelino/awesome-go">A maintained list of some notable Go projects/packages</a></li>
+                                <li>Many More</li>
+                            </ul></small>
+                        <li>Books</li>
+                            <small><ul>
+                                <li><a href="https://github.com/dariubs/GoBooks">A maintained list of some notable Go books</a></li>
+                            </ul></small>
+                    </ol>
+                </section>
+                
+                <section data-transition="slide" data-background="#4169E1" data-background-transition="zoom">
+					<h2>Thanks & Go For It!</h2>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
